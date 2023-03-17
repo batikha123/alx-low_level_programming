@@ -16,11 +16,11 @@ int main(void)
 {
 	int i, c, li, lli, f; 
 	
-	c = sizeof(char);
-	i = sizeof(int);
-	li = sizeof(long);
-	lli = sizeof(long long);
-	f = sizeof(float);
+	c= sizeof(char);
+	i= sizeof(int);
+	l = sizeof(long);
+	lli= sizeof(long long);
+	f= sizeof(float);
 
 	printf("Size of a char: %d byte(s)\n", c);
 	printf("Size of an int: %d byte(s)\n", i);
