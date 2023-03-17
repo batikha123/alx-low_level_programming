@@ -15,6 +15,7 @@
 int main(void)
 {
 	int i, c, li, lli, f;
+
 	c = sizeof(char);
 	i = sizeof(int);
 	li = sizeof(long);
