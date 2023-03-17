@@ -1,5 +1,17 @@
 #include <stdio.h>
 
+/**
+ * main - Entry point
+ *
+ * variables declaration
+ *
+ * variables initialization
+ *
+ * print
+ *
+ * return: Always 0 (Success)
+ */
+
 int main(void)
 {
 	int i,c,li,lli,f; 
