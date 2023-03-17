@@ -9,12 +9,12 @@
  *
  * print
  *
- * return: Always 0 (Success)
+ * Return: Always 0 (Success)
  */
 
 int main(void)
 {
-	int i,c,li,lli,f; 
+	int i, c, li, lli, f; 
 	
 	c = sizeof(char);
 	i = sizeof(int);
