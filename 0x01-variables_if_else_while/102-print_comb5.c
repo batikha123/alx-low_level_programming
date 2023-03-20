@@ -16,8 +16,11 @@ int main(void)
 			{
 				for (l = 0; l <= 9; l++)
 				{
-					if (j >= l && l != 0 && j != 0)
-						continue;
+					if (j != 0 && l != 0)
+					{
+						if (j >= l)
+							continue;
+					}
 
 					putchar(i + '0');
 					putchar(j + '0');
