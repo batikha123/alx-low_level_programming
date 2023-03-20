@@ -27,7 +27,7 @@ int main(void)
 					putchar(k + '0');
 					putchar(l + '0');
 					
-					if (i == k && k == l)
+					if (i == k && k == l && i == 9)
 						continue;
 
 					putchar(',');
