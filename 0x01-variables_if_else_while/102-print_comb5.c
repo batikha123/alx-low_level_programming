@@ -5,7 +5,7 @@
  * Return: Always 0 (Success)
  */
 int main(void)
-{
+{	
 	int i, j, k, l;
 
 	for (i = 0; i <= 9; i++)
@@ -16,11 +16,19 @@ int main(void)
 			{
 				for (l = 0; l <= 9; l++)
 				{
+					if (j >= l)
+						continue;
+
 					putchar(i + '0');
 					putchar(j + '0');
+
 					putchar(' ');
+					
 					putchar(k + '0');
 					putchar(l + '0');
+					
+					if (i == k && k == l)
+						continue;
 
 					putchar(',');
 					putchar(' ');
@@ -32,4 +40,5 @@ int main(void)
 	putchar('\n');
 
 	return (0);
+
 }
