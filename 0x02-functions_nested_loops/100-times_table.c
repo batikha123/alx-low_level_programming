@@ -22,9 +22,6 @@ void print_times_table(int n)
 						_putchar(' ');
 					}
 					_putchar((i * j) + '0');
-					if (j == n)
-						continue;
-					_putchar(',');
 				}
 				else if ((i * j) > 9 && (i * j) <= 99)
 				{
@@ -32,9 +29,6 @@ void print_times_table(int n)
 					_putchar(' ');
 					_putchar(((i * j) / 10) + '0');
 					_putchar(((i * j) % 10) + '0');
-					if (j == n)
-						continue;
-					_putchar(',');
 				}
 				else
 				{
@@ -42,10 +36,10 @@ void print_times_table(int n)
 					_putchar(((i * j) / 100) + '0');
 					_putchar((((i * j) %  100) / 10) + '0');
 					_putchar(((i * j) % 10) + '0');
-					if (j == n)
-						continue;
-					_putchar(',');
 				}
+				if (j == n)
+					continue;
+				_putchar(',');
 			}
 			_putchar('\n');
 		}
