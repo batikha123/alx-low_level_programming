@@ -16,7 +16,7 @@ int is_prime_number(int n)
  * _prime - checks if prime
  * @a: integer
  * @b: integer
- * Return:
+ * Return: 1 if prime or 0
  */
 int _prime(int a, int b)
 {
