@@ -7,20 +7,21 @@
  */
 int main(int argc, char *argv[])
 {
-	int i = 0;
+	if (argc < 1)
+		return (1);
 
-	while (argc > 0)
+	while (*argv)
 	{
-		while(*argv[i])
-		{
-			_putchar(*argv[i]);
-			argv[i]++;
-		}
-		
-		_putchar('\n');
+		char *p = *argv;
 
-		i++;
-		argc--;
+		while (*p)
+		{
+			_putchar(*p);
+			p++;
+		}
+
+		_putchar('\n');
+		argv++;
 	}
 
 	return (0);
