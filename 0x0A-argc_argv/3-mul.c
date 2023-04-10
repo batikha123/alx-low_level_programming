@@ -1,4 +1,5 @@
-#include "main.h"
+#include <stdio.h>
+#include <stdlib.h>
 /**
  * main - multiplie two numbers passed as arguments
  * @argc: number of arguments
@@ -7,23 +8,22 @@
  */
 int main(int argc, char *argv[])
 {
-	if (argc < 3)
+	if (argc != 3)
 	{
-		_putchar('E');
-		_putchar('r');
-		_putchar('r');
-		_putchar('o');
-		_putchar('r');
-		_putchar('\n');
+		printf("Error\n");
 		return (1);
 	}
 	else
 	{
-		*argv[1] -= '0';
-		*argv[2] -= '0';
+		int a, b;
+		long mul;
 
-		putchar((*argv[1] * *argv[2]) + '0');
-		_putchar('\n');
+		a = strtol(argv[1], NULL, 10);
+		b = strtol(argv[2], NULL, 10);
+
+		mul = a * b;
+
+		printf("%ld\n", mul);
 	}
 
 	return (0);
