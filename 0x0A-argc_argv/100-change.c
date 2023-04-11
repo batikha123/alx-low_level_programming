@@ -35,6 +35,12 @@ int main(int argc, char *argv[])
 
 	return (0);
 }
+/**
+ * min_coins - return min coins to make change
+ * @a: change to be made
+ * @b: number of coins
+ * Return: b
+ */
 int min_coins(int a, int b)
 {
 	while (a > 0)
