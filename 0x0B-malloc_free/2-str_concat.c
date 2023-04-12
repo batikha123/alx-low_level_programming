@@ -11,9 +11,6 @@ char *str_concat(char *s1, char *s2)
 	int i, size, size1, size2;
 	char *p;
 
-	if (s1 == NULL && s2 == NULL)
-		return (NULL);
-
 	size1 = _size(s1);
 	size2 = _size(s2);
 	size  = size1 + size2;
