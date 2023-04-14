@@ -1,5 +1,7 @@
 #include "main.h"
 #include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
 /**
  * string_nconcat - concatenate two strings
  * @s1: first string
@@ -38,9 +40,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		for (; i < length; i++)
 			p[i] = s2[i - length1];
 	}
-
-	if (length2 == n)
-		p[i] = '\0';
+	p[i] = '\0';
 
 	return (p);
 }
