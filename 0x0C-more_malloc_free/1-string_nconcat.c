@@ -27,6 +27,9 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		}
 	}
 
+	if (s2 == NULL)
+		n = 0;
+
 	length = length1 + n + 1;
 
 	/* Allocate memory*/
@@ -39,7 +42,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	for (i = 0; i < length1; i++)
 		p[i] = s1[i];
 	/* Add n chars of s2 into p*/
-	if (s2 != NULL)
+	if (n != 0)
 	{
 		for (; i < length; i++)
 			p[i] = s2[i - length1];
