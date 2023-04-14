@@ -44,5 +44,9 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		for (; i < length; i++)
 			p[i] = s2[i - length1];
 	}
+	else
+	{
+		p[i] = '\n';
+	}
 		return (p);
 }
