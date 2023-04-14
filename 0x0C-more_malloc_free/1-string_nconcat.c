@@ -1,7 +1,5 @@
 #include "main.h"
 #include <stdlib.h>
-int _length(char *str);
-
 /**
  * string_nconcat - concatenate two strings
  * @s1: first string
