@@ -1,6 +1,7 @@
 #include "main.h"
 #include <stdlib.h>
 #include <stdio.h>
+#include <string.h>
 int _length(char *str);
 
 /**
@@ -35,7 +36,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		p[i] = s1[i];
 	/* Add n chars of s2 into p*/
 	if (s2 == NULL)
-		p[i] = '\n';
+		p[i] = '\0';
 	else
 	{
 		for (; i <= length; i++)
@@ -43,7 +44,8 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	}
 
 	if (length2 == n)
-		p[i] = '\n';
+		p[i] = '\0';
+
 	return (p);
 }
 /**
