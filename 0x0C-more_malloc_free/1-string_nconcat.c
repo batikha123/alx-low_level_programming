@@ -1,6 +1,6 @@
 #include "main.h"
 #include <stdlib.h>
-
+#include <stdio.h>
 int _length(char *str);
 
 /**
@@ -15,23 +15,17 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	unsigned int length1, length2, length, i;
 	char *p;
 
-	/* Determine the length of s1*/
-	if (s1 == NULL)
-		length1 = 0;
-	else
-		length1 = _length(s1);
-
+	/* Determine the length of s1 and s2*/
+	length1 = _length(s1);
 	length2 = _length(s2);
 
-	if (s2 == NULL)
-		length2 = 0;
 	if (length2 > n)
 		length2 = n;
 
-	length = length1 + length2 + 1;
+	length = length1 + length2;
 
 	/* Allocate memory*/
-	p = malloc(sizeof(*p) * length);
+	p = malloc(sizeof(char) * length + 1);
 
 	if (p == NULL)
 		return (NULL);
@@ -40,13 +34,8 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	for (i = 0; i < length1; i++)
 		p[i] = s1[i];
 	/* Add n chars of s2 into p*/
-	if (length2 != 0)
-	{
-		for (; i < length; i++)
-			p[i] = s2[i - length1];
-	}
-	else
-		p[i] = '\n';
+	for (; i < length; i++)
+		p[i] = s2[i - length1];
 
 	return (p);
 }
@@ -58,6 +47,9 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 int _length(char *str)
 {
 	int s = 0;
+
+	if (str == NULL)
+		return (s);
 
 	while (*str)
 	{
