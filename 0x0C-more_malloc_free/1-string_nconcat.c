@@ -11,37 +11,37 @@ int _length(char *str);
  */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	unsigned int l1, l2, l, i;
+	unsigned int length1, length2, length, i;
 	char *p;
 
 	/* Determine the length of s1 and s2*/
-	l1 = _length(s1);
-	l2 = _length(s2);
+	length1 = _length(s1);
+	length2 = _length(s2);
 
-	if (l2 > n)
-		l2 = n;
+	if (length2 > n)
+		length2 = n;
 
-	l = l1 + l2;
+	length = length1 + length2;
 
 	/* Allocate memory*/
-	p = malloc(sizeof(char) * lh + 1);
+	p = malloc(sizeof(char) * length + 1);
 
 	if (p == NULL)
 		return (NULL);
 
 	/* Copy s1 into p*/
-	for (i = 0; i < l1; i++)
+	for (i = 0; i < length1; i++)
 		p[i] = s1[i];
 	/* Add n chars of s2 into p*/
-	if (l2 == 0)
+	if (length2 == 0)
 		p[i] = '\0';
 	else
 	{
-		for (; i < lh; i++)
-			p[i] = s2[i - l1];
+		for (; i < length; i++)
+			p[i] = s2[i - length1];
 	}
 
-	if (l2 == n)
+	if (length2 == n)
 		p[i] = '\0';
 
 	return (p);
