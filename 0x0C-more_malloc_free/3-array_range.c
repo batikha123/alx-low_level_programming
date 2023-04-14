@@ -8,27 +8,19 @@
  */
 int *array_range(int min, int max)
 {
-	int i, c, *p;
+	int i, l, *p;
 
 	if (min > max)
 		return (NULL);
 
 	/* Determine the number of elements*/
-	i = min;
-	c = 1;
-
-	while (i <= max)
-	{
-		c++;
-		i++;
-	}
-
-	p = malloc(sizeof(int) * c);
+	l = max - min + 1;
+	p = malloc(sizeof(int) * l);
 
 	if (p == NULL)
 		return (NULL);
 
-	for (i = 0; i <= c; i++)
+	for (i = 0; i <= l; i++)
 	{
 		p[i] = min;
 		min++;
