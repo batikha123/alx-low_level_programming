@@ -1,5 +1,8 @@
 #include "main.h"
 #include <stdlib.h>
+
+int _length(char *str);
+
 /**
  * string_nconcat - concatenate two strings
  * @s1: first string
@@ -9,28 +12,23 @@
  */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	int length1, length, i;
-	char *p, *s11;
-
-	length1 = 0;
-	s11 = s1;
+	unsigned int length1, length2, length, i;
+	char *p;
 
 	/* Determine the length of s1*/
 	if (s1 == NULL)
 		length1 = 0;
 	else
-	{
-		while (*s11)
-		{
-			length1++;
-			s11++;
-		}
-	}
+		length1 = _length(s1);
+
+	length2 = _length(s2);
 
 	if (s2 == NULL)
-		n = 0;
+		length2 = 0;
+	if (length2 > n)
+		length2 = n;
 
-	length = length1 + n + 1;
+	length = length1 + length2 + 1;
 
 	/* Allocate memory*/
 	p = malloc(sizeof(*p) * length);
@@ -42,14 +40,30 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	for (i = 0; i < length1; i++)
 		p[i] = s1[i];
 	/* Add n chars of s2 into p*/
-	if (n != 0)
+	if (length2 != 0)
 	{
 		for (; i < length; i++)
 			p[i] = s2[i - length1];
 	}
 	else
-	{
 		p[i] = '\n';
+
+	return (p);
+}
+/**
+ * _length - return the length of a string
+ * @str: the str
+ * Return: integer
+ */
+int _length(char *str)
+{
+	int s = 0;
+
+	while (*str)
+	{
+		s++;
+		str++;
 	}
-		return (p);
+
+	return (s);
 }
