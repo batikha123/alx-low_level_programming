@@ -23,6 +23,8 @@ void print_dog(struct dog *d);
 typedef struct dog dog_t;
 /* function that creates a new dog */
 dog_t *new_dog(char *name, float age, char *owner);
+/* determine the length of a string */
+int _strlen(char *str);
 /* function that frees dogs. */
 void free_dog(dog_t *d);
 
