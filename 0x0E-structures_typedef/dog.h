@@ -25,6 +25,8 @@ typedef struct dog dog_t;
 dog_t *new_dog(char *name, float age, char *owner);
 /* determine the length of a string */
 int _strlen(char *str);
+/* copy a string into another */
+char *_strcpy(char *dest, char *src);
 /* function that frees dogs. */
 void free_dog(dog_t *d);
 
