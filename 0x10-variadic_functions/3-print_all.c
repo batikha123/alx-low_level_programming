@@ -14,17 +14,14 @@ void print_all(const char * const format, ...)
 	va_start(args, format);
 
 	while (format == NULL)
-	{
-		printf("\n");
 		return;
-	}
 
 	while (format[i])
 	{
 		switch (format[i])
 		{
 			case 'c':
-				printf("%c", (char)va_arg(args, int));
+				printf("%c", va_arg(args, int));
 				break;
 			case 'i':
 				printf("%d", va_arg(args, int));
